@@ -1,12 +1,16 @@
 package ru.gb.lesson8.ui;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -25,6 +29,10 @@ import ru.gb.lesson8.ui.list.ToDoTasksFragment;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
+    private Layout layout;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,5 +84,30 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        // super.onBackPressed();
+            showAlertDialog();
+
+    }
+
+    public void showAlertDialog() {
+
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.quit)
+                    .setMessage(R.string.dialog_message)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton(R.string.no, null)
+                    .setCancelable(false)
+                    .show();
+
     }
 }

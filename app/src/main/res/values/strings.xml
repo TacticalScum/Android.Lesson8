@@ -16,4 +16,8 @@
     <string name="TextViewAbout">Что-то о приложении</string>
     <string name="navigation_drawer_close">Close</string>
     <string name="navigation_drawer_open">Open</string>
+    <string name="quit">Внимание!</string>
+    <string name="dialog_message">Вы уверены, что хотите выйти?</string>
+    <string name="ok">Да</string>
+    <string name="no">Нет</string>
 </resources>

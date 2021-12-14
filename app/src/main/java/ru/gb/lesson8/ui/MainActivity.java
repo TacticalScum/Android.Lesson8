@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -90,8 +91,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // super.onBackPressed();
-            showAlertDialog();
+            //showAlertDialog();
+        int count = getSupportFragmentManager().getBackStackEntryCount();
 
+        if (count == 0) {
+            showAlertDialog();
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
     }
 
     public void showAlertDialog() {
@@ -102,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(MainActivity.this, "Заходите ещё", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     })

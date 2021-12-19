@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -116,6 +117,6 @@ public class MainActivity extends AppCompatActivity {
                     .setNegativeButton(R.string.no, null)
                     .setCancelable(false)
                     .show();
-
     }
+
 }

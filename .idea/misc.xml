@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/drawable/ic_baseline_whatshot_24.xml" value="0.2703125" />
+        <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/layout-land/activity_main.xml" value="0.22522522522522523" />
         <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/layout/activity_tasks_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/layout/fragment_tasks_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/layout/item.xml" value="0.25416666666666665" />
         <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/layout/item_tasks.xml" value="0.25416666666666665" />
         <entry key="..\:/Downloads/Android1/Lesson8/app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>

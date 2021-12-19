@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.List;
+import java.util.zip.Inflater;
 
 
 import ru.gb.lesson8.R;
@@ -19,6 +21,8 @@ import ru.gb.lesson8.domain.InMemoryTasksRepository;
 import ru.gb.lesson8.domain.Tasks;
 
 public class ToDoTasksFragment extends Fragment implements ToDoTasksView {
+
+
 
     public static final String ARG_TASK = "ARG_TASK";
     public static final String RESULT_KEY = "ToDoTasksFragment_RESULT";
@@ -31,6 +35,7 @@ public class ToDoTasksFragment extends Fragment implements ToDoTasksView {
         super.onCreate(savedInstanceState);
 
         presenter = new TasksListPresenter(this, new InMemoryTasksRepository());
+
 
     }
 
@@ -53,9 +58,12 @@ public class ToDoTasksFragment extends Fragment implements ToDoTasksView {
     @Override
     public void showTasks(List<Tasks> tasks) {
 
+        LayoutInflater layoutInflater = getLayoutInflater();
+
         for (Tasks task : tasks) {
 
             View itemView = LayoutInflater.from(requireContext()).inflate(R.layout.item_tasks, toDoContainer, false);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -68,6 +76,7 @@ public class ToDoTasksFragment extends Fragment implements ToDoTasksView {
                 }
             });
 
+
             TextView taskName = itemView.findViewById(R.id.taskNameView);
             taskName.setText(task.getTaskName());
 
@@ -79,6 +88,9 @@ public class ToDoTasksFragment extends Fragment implements ToDoTasksView {
 
             TextView taskTime = itemView.findViewById(R.id.taskTimeView);
             taskTime.setText(task.getTaskTime());
+
+            ImageView taskIcon = itemView.findViewById(R.id.taskDescriptionIconImage);
+            taskIcon.setImageResource(task.getTaskIcon());
 
             toDoContainer.addView(itemView);
         }

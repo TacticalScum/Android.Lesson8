@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="icon1" type="drawable">@drawable/ic_baseline_whatshot_24</item>
+    <item name="icon2" type="drawable">@drawable/ic_baseline_work_24</item>
+
+
+</resources>

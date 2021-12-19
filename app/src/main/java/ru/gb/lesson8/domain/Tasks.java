@@ -3,9 +3,13 @@ package ru.gb.lesson8.domain;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 
+import ru.gb.lesson8.R;
+
 public class Tasks implements Parcelable {
+
 
     @StringRes
     private final int TaskName;
@@ -22,12 +26,16 @@ public class Tasks implements Parcelable {
     @StringRes
     private final int TaskTotalDescription;
 
-    public Tasks(int taskName, int taskDate, int taskDescription, int taskTime, int taskTotalDescription) {
+    @DrawableRes
+    private final int TaskIcon;
+
+    public Tasks(int taskName, int taskDate, int taskDescription, int taskTime, int taskTotalDescription, int taskIcon) {
         this.TaskName = taskName;
         this.TaskDate = taskDate;
         this.TaskDescription = taskDescription;
         this.TaskTime = taskTime;
         this.TaskTotalDescription = taskTotalDescription;
+        this.TaskIcon = taskIcon;
     }
 
     protected Tasks(Parcel in) {
@@ -36,6 +44,7 @@ public class Tasks implements Parcelable {
         TaskDescription = in.readInt();
         TaskTime = in.readInt();
         TaskTotalDescription = in.readInt();
+        TaskIcon = in.readInt();
     }
 
     public static final Creator<Tasks> CREATOR = new Creator<Tasks>() {
@@ -54,6 +63,7 @@ public class Tasks implements Parcelable {
         return TaskName;
     }
 
+
     public int getTaskDate() {
         return TaskDate;
     }
@@ -70,6 +80,10 @@ public class Tasks implements Parcelable {
         return TaskTotalDescription;
     }
 
+    public int getTaskIcon() {
+        return TaskIcon;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -82,5 +96,6 @@ public class Tasks implements Parcelable {
         dest.writeInt(TaskDescription);
         dest.writeInt(TaskTime);
         dest.writeInt(TaskTotalDescription);
+        dest.writeInt(TaskIcon);
     }
 }
